@@ -11,7 +11,7 @@ Feature: Test Login Functionality
     Then verify user is on login screen
     When user login with username "standard_user" and password "secret_sauce"
     Then verify user is on home screen
-    When user click on homeburger menu
+    When user click on homeBurger menu
     And click on logout link
     Then verify user is on login screen
 

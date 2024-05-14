@@ -1,7 +1,6 @@
 package com.automation.steps;
 
 import com.automation.pages.LoginPage;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -27,8 +26,14 @@ public class LoginSteps {
     }
 
 
-    @And("click on logout link")
-    public void clickOnLogoutLink() {
 
+
+    @Then("verify locked out user error message is displayed")
+    public void verifyLockedOutUserErrorMessageIsDisplayed(String message) {
+        Assert.assertTrue(loginPage.verifyLockedOutMessage(message));
     }
 }
+
+
+
+
