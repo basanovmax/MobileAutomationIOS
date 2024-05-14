@@ -14,7 +14,7 @@ public class LoginPage extends BasePage {
     @FindBy(id = "test-LOGIN")
     WebElement loginBtn;
 
-    @FindBy(id = "Sorry, this user has been locked out.")
+    @FindBy(id = "test-Error message")
     WebElement lockedOutMessage;
 
     public void openApplication() {
@@ -31,16 +31,10 @@ public class LoginPage extends BasePage {
         loginBtn.click();
     }
 
-    public void slowEnterText(String text, WebElement element) {
-        try {
-            for (char c : text.toCharArray()) {
-                element.sendKeys(String.valueOf(c));
-            }
-        } catch (Exception e) {
-        }
-    }
 
     public boolean verifyLockedOutMessage(String message) {
+        System.out.println(lockedOutMessage.getText());
+        System.out.println(message);
         return lockedOutMessage.isDisplayed() && lockedOutMessage.getText().equals(message);
     }
 }
